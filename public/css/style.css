@@ -43,7 +43,15 @@ body {
 }
 
 .message {
-  margin-bottom: 10px;
+  text-align: justify;
+  text-justify: inter-word;
+  margin: 12px 0;
+  padding: 10px 16px;
+  border-radius: 12px;
+  word-spacing: 2px;
+  line-height: 1.7;
+  background: #f5faff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
 
 .user {
@@ -74,6 +82,9 @@ button {
   color: white;
   border: none;
   cursor: pointer;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background 0.2s;
 }
 
 button:hover {

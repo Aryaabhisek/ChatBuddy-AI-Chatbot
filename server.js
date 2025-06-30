@@ -5,6 +5,7 @@ const { GoogleGenAI } = require('@google/genai');
 const app = express();
 app.use(cors());
 app.use(express.json());
+app.use(express.static('public'));
 
  
 require('dotenv').config();
@@ -31,3 +32,5 @@ app.get('/', (req, res) => {
 });
 
 app.listen(3000, () => console.log('Server running on port 3000'));
+
+

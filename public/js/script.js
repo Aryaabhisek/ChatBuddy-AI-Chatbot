@@ -15,21 +15,28 @@ chatForm.addEventListener('submit', async (e) => {
   addMessage(response, 'bot');
 });
 
+function parseMarkdown(text) {
+  
+  text = text.replace(/\*\*(.*?)\*\*/g, '<b>$1</b>');
+  
+  text = text.replace(/\*(.*?)\*/g, '<i>$1</i>');
+  return text;
+}
+
 function addMessage(text, sender) {
   const messageDiv = document.createElement('div');
   messageDiv.classList.add('message', sender);
 
   if (Array.isArray(text)) {
-    // Render as bullet points
     const ul = document.createElement('ul');
     text.forEach(point => {
       const li = document.createElement('li');
-      li.textContent = point;
+      li.innerHTML = parseMarkdown(point); // Use innerHTML for parsed markdown
       ul.appendChild(li);
     });
     messageDiv.appendChild(ul);
   } else {
-    messageDiv.textContent = text;
+    messageDiv.innerHTML = parseMarkdown(text); // Use innerHTML for parsed markdown
   }
 
   chatBox.appendChild(messageDiv);
@@ -51,7 +58,7 @@ function addMessage(text, sender) {
   }
 } */
 
-  async function fetchGeminiResponse(userMessage) {
+async function fetchGeminiResponse(userMessage) {
   try {
     const res = await fetch(API_URL, {
       method: 'POST',
@@ -59,6 +66,7 @@ function addMessage(text, sender) {
       body: JSON.stringify({ message: userMessage })
     });
     const data = await res.json();
+    console.log('Gemini API response:', data);
     // Get the AI response text
     const text = data.candidates?.[0]?.content?.parts?.[0]?.text || 'No response.';
     // Split by line breaks or periods for bullet points (customize as needed)
