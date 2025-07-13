@@ -20,10 +20,11 @@ app.post('/api/chat', async (req, res) => {
       model: "gemini-2.0-flash",
       contents: userMessage,
     });
+    console.log('Gemini API raw response:', response);
     res.json(response); 
   } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: 'Server error' });
+    console.error('Backend error:', err);
+    res.status(500).json({ error: 'Server error', details: err.message });
   }
 });
 

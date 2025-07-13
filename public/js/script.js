@@ -25,18 +25,18 @@ function parseMarkdown(text) {
 
 function addMessage(text, sender) {
   const messageDiv = document.createElement('div');
-  messageDiv.classList.add('message', sender);
+  messageDiv.classList.add('message', sender); // sender is 'user' or 'bot'
 
   if (Array.isArray(text)) {
     const ul = document.createElement('ul');
     text.forEach(point => {
       const li = document.createElement('li');
-      li.innerHTML = parseMarkdown(point); // Use innerHTML for parsed markdown
+      li.innerHTML = parseMarkdown(point);
       ul.appendChild(li);
     });
     messageDiv.appendChild(ul);
   } else {
-    messageDiv.innerHTML = parseMarkdown(text); // Use innerHTML for parsed markdown
+    messageDiv.innerHTML = parseMarkdown(text);
   }
 
   chatBox.appendChild(messageDiv);
