@@ -40,6 +40,8 @@ body {
   max-height: 400px;
   overflow-y: auto;
   border-bottom: 1px solid #ccc;
+  display: flex;
+  flex-direction: column;
 }
 
 .message {

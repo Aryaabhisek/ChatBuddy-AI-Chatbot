@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chatbot - Login</title>
+    <link rel="stylesheet" href="public/css/loginPage.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <div class="logo">
+                <img src="images/chatbot-icon.png" alt="AI Chatbot">
+                <h1>ChatBuddy</h1>
+            </div>
+            
+            <form id="loginForm" class="form">
+                <h2>Welcome Back</h2>
+                <!-- <p>Log in to continue your conversation with our AI</p> -->
+                
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <div class="input-with-icon">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <div class="input-with-icon">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                        <i class="fas fa-eye toggle-password" onclick="togglePassword()"></i>
+                    </div>
+                    <a href="#" class="forgot-password">Forgot password?</a>
+                </div>
+                
+                <button type="submit" class="btn">Log In</button>
+                
+                <div class="divider">
+                    <span>or</span>
+                </div>
+                
+                <div class="social-login">
+                    <button type="button" class="btn-social google">
+                        <i class="fab fa-google"></i> Continue with Google
+                    </button>
+                    <button type="button" class="btn-social github">
+                        <i class="fab fa-github"></i> Continue with GitHub
+                    </button>
+                </div>
+                
+                <p class="signup-link">Don't have an account? <a href="#" id="showSignup">Sign up</a></p>
+            </form>
+            
+            <form id="signupForm" class="form hidden">
+                <h2>Create Account</h2>
+                <p>Join our AI community today</p>
+                
+                <div class="form-group">
+                    <label for="signupName">Full Name</label>
+                    <div class="input-with-icon">
+                        <i class="fas fa-user"></i>
+                        <input type="text" id="signupName" name="name" placeholder="Enter your full name" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="signupEmail">Email</label>
+                    <div class="input-with-icon">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" id="signupEmail" name="email" placeholder="Enter your email" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="signupPassword">Password</label>
+                    <div class="input-with-icon">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="signupPassword" name="password" placeholder="Create a password" required>
+                        <i class="fas fa-eye toggle-password" onclick="toggleSignupPassword()"></i>
+                    </div>
+                    <div class="password-strength">
+                        <span class="strength-bar"></span>
+                        <span class="strength-bar"></span>
+                        <span class="strength-bar"></span>
+                        <span class="strength-text">Password strength</span>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <div class="input-with-icon">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="confirmPassword" placeholder="Confirm your password" required>
+                    </div>
+                </div>
+                
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></label>
+                </div>
+                
+                <button type="submit" class="btn">Sign Up</button>
+                
+                <p class="login-link">Already have an account? <a href="#" id="showLogin">Log in</a></p>
+            </form>
+        </div>
+        
+        <div class="illustration">
+            <div class="content">
+                <h2>ChatBuddy</h2>
+                <h2>Your Intelligent AI Assistant</h2>
+                <p>Experience natural conversations with our advanced AI chatbot that learns and adapts to your needs.</p>
+                <div class="features">
+                    <div class="feature">
+                        <i class="fas fa-brain"></i>
+                        <span>Smart Learning</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Secure & Private</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-clock"></i>
+                        <span>24/7 Availability</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="public/js/loginPage.js"></script>
+</body>
+</html>
