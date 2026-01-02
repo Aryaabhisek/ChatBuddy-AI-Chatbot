@@ -1,0 +1,47 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f4f4f4;
+}
+
+.nav {
+  background: #222;
+  color: white;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav a, .nav button {
+  margin-left: 10px;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.page {
+  padding: 20px;
+}
+
+.chat-input {
+  display: flex;
+  padding: 10px;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 8px;
+}
+
+.chat-window {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+}
+
+.model-box {
+  background: white;
+  padding: 10px;
+  width: 30%;
+}
